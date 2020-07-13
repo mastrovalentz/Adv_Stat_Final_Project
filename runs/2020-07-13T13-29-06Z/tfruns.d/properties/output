@@ -1,0 +1,6 @@
+
+> rm(list = ls())
+
+> FLAGS = flags(flag_numeric("dropout1", 0,4), flag_numeric("dropout2", 
++     0,3), flag_string("activation1", "relu"), flag_string("activation2", 
++ .... [TRUNCATED] 
