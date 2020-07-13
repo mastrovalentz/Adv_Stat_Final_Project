@@ -1,0 +1,61 @@
+
+> library(keras)
+
+> batch_size <- 128
+
+> num_classes <- 10
+
+> epochs <- 30
+
+> c(c(x_train, y_train), c(x_test, y_test)) %<-% dataset_mnist()
+
+> x_train <- array_reshape(x_train, c(nrow(x_train), 
++     784))
+
+> x_test <- array_reshape(x_test, c(nrow(x_test), 784))
+
+> x_train <- x_train/255
+
+> x_test <- x_test/255
+
+> cat(nrow(x_train), "train samples\n")
+60000 train samples
+
+> cat(nrow(x_test), "test samples\n")
+10000 test samples
+
+> y_train <- to_categorical(y_train, num_classes)
+
+> y_test <- to_categorical(y_test, num_classes)
+
+> model <- keras_model_sequential()
+
+> model %>% layer_dense(units = 256, activation = "relu", 
++     input_shape = c(784)) %>% layer_dropout(rate = 0,4) %>% layer_dense(units = 128, 
++   .... [TRUNCATED] 
+
+> summary(model)
+Model: "sequential_4"
+________________________________________________________________________________
+Layer (type)                        Output Shape                    Param #     
+================================================================================
+dense_12 (Dense)                    (None, 256)                     200960      
+________________________________________________________________________________
+dropout_8 (Dropout)                 (None, 256)                     0           
+________________________________________________________________________________
+dense_13 (Dense)                    (None, 128)                     32896       
+________________________________________________________________________________
+dropout_9 (Dropout)                 (None, 128)                     0           
+________________________________________________________________________________
+dense_14 (Dense)                    (None, 10)                      1290        
+================================================================================
+Total params: 235,146
+Trainable params: 235,146
+Non-trainable params: 0
+________________________________________________________________________________
+
+> model %>% compile(loss = "categorical_crossentropy", 
++     optimizer = optimizer_rmsprop(), metrics = c("accuracy"))
+
+> history <- model %>% fit(x_train, y_train, batch_size = batch_size, 
++     epochs = epochs, verbose = 1, validation_split = 0,2)
