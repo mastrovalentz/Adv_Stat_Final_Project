@@ -1,8 +1,4 @@
-plot_all_features <- function() {
-
-	repr_plot_width  <-  12
-	repr_plot_height <-   4
-	repr_plot_res    <- 250
+plot_all_input_features <- function(repr_plot_width=12, repr_plot_height=4, repr_plot_res=250) {
 
 	ID_03 <- TRUE
 	ID_06 <- TRUE
@@ -16,7 +12,6 @@ plot_all_features <- function() {
 	ID_17 <- TRUE
 	ID_18 <- TRUE
 
-
 	breaks_ID_03_bkg <-  30;		breaks_ID_03_sig <-  30;		breaks_ID_03_lhcb <-  30;
 	breaks_ID_06_bkg <- 100;		breaks_ID_06_sig <- 100;		breaks_ID_06_lhcb <-  25;
 	breaks_ID_07_bkg <- 100;		breaks_ID_07_sig <-  25;		breaks_ID_07_lhcb <- 100;
@@ -27,7 +22,8 @@ plot_all_features <- function() {
 	breaks_ID_12_bkg <- 100;		breaks_ID_12_sig <-  25;		breaks_ID_12_lhcb <- 100;
 	breaks_ID_14_bkg <-  25;		breaks_ID_14_sig <-  25;		breaks_ID_14_lhcb <-  25;
 	breaks_ID_17_bkg <- 100;		breaks_ID_17_sig <-  25;		breaks_ID_17_lhcb <- 100;
-	breaks_ID_17_bkg <- 100;		breaks_ID_17_sig <-  25;		breaks_ID_17_lhcb <- 100;
+	breaks_ID_18_bkg <- 100;		breaks_ID_18_sig <-  25;		breaks_ID_18_lhcb <- 100;
+
 
 	if (ID_03) {
 		par(mfrow=c(1,3))
