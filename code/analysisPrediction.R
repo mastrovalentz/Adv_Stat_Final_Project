@@ -26,8 +26,8 @@ PredictionAnalysis <- function(builder, params, prob){
     nsig_false     <- len_sig_false    (y_lhcb_pred     ,prob) 
     nsig_false_cut <- len_sig_false_cut(y_cut_lhcb_pred ,prob)
 
-    nbkg     <- ntot     - nsig    
-    nbkg_cut <- ntot_cut - nsig_cut
+    nbkg     <- ntot     - nsig     -  nsig_false    
+    nbkg_cut <- ntot_cut - nsig_cut -  nsig_false_cut
     lost_sig     <- (Sig_expect -nsig    ) / Sig_expect  #signal not detected
     lost_sig_cut <- (Sig_expect -nsig_cut) / Sig_expect  #signal not detected
     miss_Bkg     <- nsig_false     / (ntot     - Sig_expect)  #missclassified bkg
