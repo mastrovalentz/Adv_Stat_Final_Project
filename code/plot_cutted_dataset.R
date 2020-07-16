@@ -12,8 +12,8 @@ plot_cutted_dataset <- function(repr_plot_width=12, repr_plot_height=4, repr_plo
 		options(repr.plot.width=repr_plot_width, repr.plot.height=repr_plot_height, repr.plot.res=repr_plot_res)
 
 		hist(data.lhcb$Lambda_b0_MM_F,
-		     breaks=breaks_ID_04_lhcb_cutted, probability=TRUE, col="darkgreen",
-		     xlab=expression(paste(Lambda[b]^0, " Mass")), main="LHCb Cutted Dataset"); box()
+		     breaks=breaks_ID_04_lhcb_cutted, col="darkgreen",
+		     xlab=expression(paste(Lambda[b]^0, " Mass", " [MeV/c^2]")), main="LHCb Cutted Dataset"); box()
 	}
 
 
@@ -22,8 +22,8 @@ plot_cutted_dataset <- function(repr_plot_width=12, repr_plot_height=4, repr_plo
 		options(repr.plot.width=repr_plot_width, repr.plot.height=repr_plot_height, repr.plot.res=repr_plot_res)
 
 		hist(data.lhcb$DeltaM_F,
-		     breaks=breaks_ID_15_lhcb_cutted, probability=TRUE, col="darkgreen",
-		     xlab=expression(paste(Delta, "M")), main="LHCb Cutted Dataset");       box()
+		     breaks=breaks_ID_15_lhcb_cutted, col="darkgreen",
+		     xlab=expression(paste(Delta, "M", " [MeV/c^2]")), main="LHCb Cutted Dataset");       box()
 	}
 
 }

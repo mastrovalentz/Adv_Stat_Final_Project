@@ -31,15 +31,15 @@ plot_all_input_features <- function(repr_plot_width=12, repr_plot_height=4, repr
 
 		hist(data.bkg$Lambda_c_MM_F,
 		     breaks=breaks_ID_03_bkg, probability=TRUE, col="firebrick3",
-		     xlab=expression(paste(Lambda[c]^'+', " Mass")), main="Background Dataset"); box()
+		     xlab=expression(paste(Lambda[c]^'+', " Mass [MeV/c^2]")), main="Background Dataset"); box()
 
 		hist(data.sig$Lambda_c_MM_F,
 		     breaks=breaks_ID_03_sig, probability=TRUE, col="navy",
-		     xlab=expression(paste(Lambda[c]^'+', " Mass")), main="Signal Dataset");     box()
+		     xlab=expression(paste(Lambda[c]^'+', " Mass [MeV/c^2]")), main="Signal Dataset");     box()
 
 		hist(data.lhcb$Lambda_c_MM_F,
 		     breaks=breaks_ID_03_lhcb, probability=TRUE, col="darkgreen",
-		     xlab=expression(paste(Lambda[c]^'+', " Mass")), main="LHCb Dataset");       box()
+		     xlab=expression(paste(Lambda[c]^'+', " Mass [MeV/c^2]")), main="LHCb Dataset");       box()
 	}
 
 
@@ -68,15 +68,15 @@ plot_all_input_features <- function(repr_plot_width=12, repr_plot_height=4, repr
 		options(repr.plot.width=repr_plot_width, repr.plot.height=repr_plot_height, repr.plot.res=repr_plot_res)
 
 		hist(data.bkg$lcstarZDecLSigma_F,
-		     breaks=breaks_ID_08_bkg, probability=TRUE, col="firebrick3",
+		     breaks=breaks_ID_07_bkg, probability=TRUE, col="firebrick3",
 		     xlab=expression(paste(Lambda[c]^"+*", " z decay length over error")), main="Background Dataset"); box()
 
 		hist(data.sig$lcstarZDecLSigma_F,
-		     breaks=breaks_ID_08_sig, probability=TRUE, col="navy",
+		     breaks=breaks_ID_07_sig, probability=TRUE, col="navy",
 		     xlab=expression(paste(Lambda[c]^"+*", " z decay length over error")), main="Signal Dataset");     box()
 
 		hist(data.lhcb$lcstarZDecLSigma_F,
-		     breaks=breaks_ID_08_lhcb, probability=TRUE, col="darkgreen",
+		     breaks=breaks_ID_07_lhcb, probability=TRUE, col="darkgreen",
 		     xlab=expression(paste(Lambda[c]^"+*", " z decay length over error")), main="LHCb Dataset");       box()
 	}
 
@@ -87,16 +87,16 @@ plot_all_input_features <- function(repr_plot_width=12, repr_plot_height=4, repr
 		options(repr.plot.width=repr_plot_width, repr.plot.height=repr_plot_height, repr.plot.res=repr_plot_res)
 
 		hist(data.bkg$lcDecTime_F[data.bkg$lcDecTime_F<1 & data.bkg$lcDecTime_F>-1],
-		     breaks=100, probability=TRUE, col="firebrick3",
-		     xlab=expression(paste({t^"decay"}[Lambda[c]])), main="Background Dataset"); box()
+		     breaks=breaks_ID_08_bkg, probability=TRUE, col="firebrick3",
+		     xlab=expression(paste({t^"decay"}[Lambda[c]], " [ps]")), main="Background Dataset"); box()
 
 		hist(data.sig$lcDecTime_F[data.sig$lcDecTime_F<1 & data.sig$lcDecTime_F>-1],
-		     breaks=100, probability=TRUE, col="navy",
-		     xlab=expression(paste({t^"decay"}[Lambda[c]])), main="Signal Dataset");     box()
+		     breaks=breaks_ID_08_sig, probability=TRUE, col="navy",
+		     xlab=expression(paste({t^"decay"}[Lambda[c]], " [ps]")), main="Signal Dataset");     box()
 
 		hist(data.lhcb$lcDecTime_F[data.lhcb$lcDecTime_F<1 & data.lhcb$lcDecTime_F>-1],
-		     breaks=100, probability=TRUE, col="darkgreen",
-		     xlab=expression(paste({t^"decay"}[Lambda[c]])), main="LHCb Dataset");       box()
+		     breaks=breaks_ID_08_lhcb, probability=TRUE, col="darkgreen",
+		     xlab=expression(paste({t^"decay"}[Lambda[c]], " [ps]")), main="LHCb Dataset");       box()
 	}
 
 
@@ -107,34 +107,15 @@ plot_all_input_features <- function(repr_plot_width=12, repr_plot_height=4, repr
 
 		hist(data.bkg$lcstarDecTime_F[data.bkg$lcstarDecTime_F<1 & data.bkg$lcstarDecTime_F>-1],
 		     breaks=breaks_ID_09_bkg, probability=TRUE, col="firebrick3",
-		     xlab=expression(paste({t^"decay"}[Lambda[c]^"*"])), main="Background Dataset"); box()
+		     xlab=expression(paste({t^"decay"}[Lambda[c]^"*"], " [ps]")), main="Background Dataset"); box()
 
 		hist(data.sig$lcstarDecTime_F[data.sig$lcstarDecTime_F<1 & data.sig$lcstarDecTime_F>-1],
 		     breaks=breaks_ID_09_sig, probability=TRUE, col="navy",
-		     xlab=expression(paste({t^"decay"}[Lambda[c]^"*"])), main="Signal Dataset");     box()
+		     xlab=expression(paste({t^"decay"}[Lambda[c]^"*"], " [ps]")), main="Signal Dataset");     box()
 
 		hist(data.lhcb$lcstarDecTime_F[data.lhcb$lcstarDecTime_F<1 & data.lhcb$lcstarDecTime_F>-1],
 		     breaks=breaks_ID_09_lhcb, probability=TRUE, col="darkgreen",
-		     xlab=expression(paste({t^"decay"}[Lambda[c]^"*"])), main="LHCb Dataset");       box()
-	}
-
-
-
-	if (ID_09) {
-		par(mfrow=c(1,3))
-		options(repr.plot.width=repr_plot_width, repr.plot.height=repr_plot_height, repr.plot.res=repr_plot_res)
-
-		hist(data.bkg$lcstarDecTime_F[data.bkg$lcstarDecTime_F<1 & data.bkg$lcstarDecTime_F>-1],
-		     breaks=breaks_ID_09_bkg, probability=TRUE, col="firebrick3",
-		     xlab=expression(paste({t^"decay"}[Lambda[c]^"*"])), main="Background Dataset"); box()
-
-		hist(data.sig$lcstarDecTime_F[data.sig$lcstarDecTime_F<1 & data.sig$lcstarDecTime_F>-1],
-		     breaks=breaks_ID_09_sig, probability=TRUE, col="navy",
-		     xlab=expression(paste({t^"decay"}[Lambda[c]^"*"])), main="Signal Dataset");     box()
-
-		hist(data.lhcb$lcstarDecTime_F[data.lhcb$lcstarDecTime_F<1 & data.lhcb$lcstarDecTime_F>-1],
-		     breaks=breaks_ID_09_lhcb, probability=TRUE, col="darkgreen",
-		     xlab=expression(paste({t^"decay"}[Lambda[c]^"*"])), main="LHCb Dataset");       box()
+		     xlab=expression(paste({t^"decay"}[Lambda[c]^"*"], " [ps]")), main="LHCb Dataset");       box()
 	}
 
 
@@ -145,15 +126,15 @@ plot_all_input_features <- function(repr_plot_width=12, repr_plot_height=4, repr
 
 		hist(data.bkg$lbDecTime_F[data.bkg$lbDecTime_F<10],
 		     breaks=breaks_ID_10_bkg, probability=TRUE, col="firebrick3",
-		     xlab=expression(paste({t^"decay"}[Lambda[b]])), main="Background Dataset"); box()
+		     xlab=expression(paste({t^"decay"}[Lambda[b]], " [ps]")), main="Background Dataset"); box()
 
 		hist(data.sig$lbDecTime_F[data.sig$lbDecTime_F<10],
 		     breaks=breaks_ID_10_sig, probability=TRUE, col="navy",
-		     xlab=expression(paste({t^"decay"}[Lambda[b]])), main="Signal Dataset");     box()
+		     xlab=expression(paste({t^"decay"}[Lambda[b]], " [ps]")), main="Signal Dataset");     box()
 
 		hist(data.lhcb$lbDecTime_F[data.lhcb$lbDecTime_F<10],
 		     breaks=breaks_ID_10_lhcb, probability=TRUE, col="darkgreen",
-		     xlab=expression(paste({t^"decay"}[Lambda[b]])), main="LHCb Dataset");       box()
+		     xlab=expression(paste({t^"decay"}[Lambda[b]], " [ps]")), main="LHCb Dataset");       box()
 	}
 
 
@@ -221,15 +202,15 @@ plot_all_input_features <- function(repr_plot_width=12, repr_plot_height=4, repr
 
 		hist(data.bkg$pair0_3pi_F,
 		     breaks=breaks_ID_17_bkg, probability=TRUE, col="firebrick3",
-		     xlab=expression(paste("Pair mass of pions 1")), main="Background Dataset"); box()
+		     xlab=expression(paste("Pair mass of pions 1", " [MeV/c^2]")), main="Background Dataset"); box()
 
 		hist(data.sig$pair0_3pi_F,
 		     breaks=breaks_ID_17_sig, probability=TRUE, col="navy",
-		     xlab=expression(paste("Pair mass of pions 1")), main="Signal Dataset");     box()
+		     xlab=expression(paste("Pair mass of pions 1", " [MeV/c^2]")), main="Signal Dataset");     box()
 
 		hist(data.lhcb$pair0_3pi_F,
 		     breaks=breaks_ID_17_lhcb, probability=TRUE, col="darkgreen",
-		     xlab=expression(paste("Pair mass of pions 1")), main="LHCb Dataset");       box()
+		     xlab=expression(paste("Pair mass of pions 1", " [MeV/c^2]")), main="LHCb Dataset");       box()
 	}
 
 
@@ -240,15 +221,15 @@ plot_all_input_features <- function(repr_plot_width=12, repr_plot_height=4, repr
 
 		hist(data.bkg$pair1_3pi_F,
 		     breaks=breaks_ID_18_bkg, probability=TRUE, col="firebrick3",
-		     xlab=expression(paste("Pair mass of pions 2")), main="Background Dataset"); box()
+		     xlab=expression(paste("Pair mass of pions 2", " [MeV/c^2]")), main="Background Dataset"); box()
 
 		hist(data.sig$pair1_3pi_F,
 		     breaks=breaks_ID_18_sig, probability=TRUE, col="navy",
-		     xlab=expression(paste("Pair mass of pions 2")), main="Signal Dataset");     box()
+		     xlab=expression(paste("Pair mass of pions 2", " [MeV/c^2]")), main="Signal Dataset");     box()
 
 		hist(data.lhcb$pair1_3pi_F,
 		     breaks=breaks_ID_18_lhcb, probability=TRUE, col="darkgreen",
-		     xlab=expression(paste("Pair mass of pions 2")), main="LHCb Dataset");       box()
+		     xlab=expression(paste("Pair mass of pions 2", " [MeV/c^2]")), main="LHCb Dataset");       box()
 	}
 
 }
