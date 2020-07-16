@@ -1,18 +1,3 @@
-get_train_data <- function(n_bkg, n_sig=1090 ){
-    x_bkg <- x_train_bkg_full[1:n_bkg, ]
-    x_sig <- x_train_sig_full[1:n_sig, ]
-    x_t   <- rbind(x_bkg, x_sig)
-    y_t   <- c(y_train_bkg_full[1:n_bkg], y_train_sig_full[1:n_sig])
-    sffl  <- sample(nrow(x_t))
-    
-    x_t   <- x_t[sffl,]
-    x_t   <- scale(x_t)
-    y_t   <- y_t[sffl] 
-    return (list(x_train=x_t, y_train=y_t))
-}
-
-
-
 getOptimizer <- function (params){
     if (params$optimizer == "rmsprop"){
         return (optimizer_rmsprop(lr = params$lr, rho=params$rho))}
