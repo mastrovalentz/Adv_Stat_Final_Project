@@ -14,15 +14,15 @@ plot_all_cutting_features <- function(repr_plot_width=12, repr_plot_height=4, re
 
 		hist(data.bkg$Lambda_b0_MM_F,
 		     breaks=breaks_ID_04_bkg, probability=TRUE, col="firebrick3",
-		     xlab=expression(paste(Lambda[b]^0, " Mass")), main="Background Dataset"); box()
+		     xlab=expression(paste(Lambda[b]^0, " Mass", " [MeV/c^2]")), main="Background Dataset"); box()
 
 		hist(data.sig$Lambda_b0_MM_F,
 		     breaks=breaks_ID_04_sig, probability=TRUE, col="navy",
-		     xlab=expression(paste(Lambda[b]^0, " Mass")), main="Signal Dataset");     box()
+		     xlab=expression(paste(Lambda[b]^0, " Mass", " [MeV/c^2]")), main="Signal Dataset");     box()
 
 		hist(data.lhcb$Lambda_b0_MM_F,
 		     breaks=breaks_ID_04_lhcb, probability=TRUE, col="darkgreen",
-		     xlab=expression(paste(Lambda[b]^0, " Mass")), main="LHCb Dataset");       box()
+		     xlab=expression(paste(Lambda[b]^0, " Mass", " [MeV/c^2]")), main="LHCb Dataset");       box()
 	}
 
 
@@ -33,15 +33,15 @@ plot_all_cutting_features <- function(repr_plot_width=12, repr_plot_height=4, re
 
 		hist(data.bkg$DeltaM_F,
 		     breaks=breaks_ID_15_bkg, probability=TRUE, col="firebrick3",
-		     xlab=expression(paste(Delta, "M")), main="Background Dataset"); box()
+		     xlab=expression(paste(Delta, "M", " [MeV/c^2]")), main="Background Dataset"); box()
 
 		hist(data.sig$DeltaM_F,
 		     breaks=breaks_ID_15_sig, probability=TRUE, col="navy",
-		     xlab=expression(paste(Delta, "M")), main="Signal Dataset");     box()
+		     xlab=expression(paste(Delta, "M", " [MeV/c^2]")), main="Signal Dataset");     box()
 
 		hist(data.lhcb$DeltaM_F,
 		     breaks=breaks_ID_15_lhcb, probability=TRUE, col="darkgreen",
-		     xlab=expression(paste(Delta, "M")), main="LHCb Dataset");       box()
+		     xlab=expression(paste(Delta, "M", " [MeV/c^2]")), main="LHCb Dataset");       box()
 	}
 
 }
